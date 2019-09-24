@@ -1,19 +1,16 @@
-{% set name = "opentracing_instrumentation" %}
-{% set version = "3.1.1" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "4afedf1469cb1f868e95eb98668bbae4c26088db98cbd6bf0cfde2b087e80472" %}
+{% set version = "3.2.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: opentracing_instrumentation
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_value }}
+  url: https://pypi.io/packages/source/o/opentracing_instrumentation/opentracing_instrumentation-{{ version }}.tar.gz
+  sha256: 744d30178d8cfda08b859a8b79f8f41698d8170da5dd87c7d07c5bccbf53a0df
 
 build:
   number: 0
+  noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
 
 requirements:
@@ -23,9 +20,8 @@ requirements:
   run:
     - python
     - future
-    - futures  # [py2k]
     - wrapt
-    - tornado >=4.1,<5
+    - tornado >=4.1,<6
     - contextlib2
     - opentracing >=2,<3
     - six
