@@ -1,4 +1,4 @@
-{% set version = "3.2.0" %}
+{% set version = "3.3.1" %}
 
 package:
   name: opentracing_instrumentation
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/o/opentracing_instrumentation/opentracing_instrumentation-{{ version }}.tar.gz
-  sha256: 744d30178d8cfda08b859a8b79f8f41698d8170da5dd87c7d07c5bccbf53a0df
+  sha256: d94801aebab95b7e8f3eeb80ee0e5e886ad4f1761bcadff9b5d1d3d04560c04a
 
 build:
   number: 0
